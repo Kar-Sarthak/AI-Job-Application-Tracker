@@ -1,0 +1,151 @@
+/* ===== TERMINAL BASE ===== */
+body {
+  margin: 0;
+  background: #000;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  color: #33ff33;
+}
+
+.terminal {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== HEADER ===== */
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #33ff33;
+}
+
+.header p {
+  margin-top: 5px;
+  color: #66ff66;
+  font-size: 0.9rem;
+}
+
+/* ===== INPUT ===== */
+.terminal-input {
+  width: 100%;
+  background: black;
+  border: 1px solid #33ff33;
+  color: #33ff33;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.terminal-input::placeholder {
+  color: #228822;
+}
+
+/* ===== TABLE ===== */
+.terminal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.terminal-table th {
+  text-align: left;
+  border-bottom: 1px solid #33ff33;
+  padding: 8px;
+}
+
+.terminal-table td {
+  padding: 8px;
+  border-bottom: 1px dashed #114411;
+}
+
+.terminal-table tr:hover {
+  background: rgba(51, 255, 51, 0.05);
+  cursor: pointer;
+}
+
+/* ===== STATUS CELL LAYOUT ===== */
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== STATUS SELECT ===== */
+.status-select {
+  background-color: black;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  color: inherit;
+}
+
+.status-select:focus {
+  outline: none;
+}
+
+.status-select option {
+  background-color: black;
+  color: #33ff33;
+}
+
+/* ===== STATUS COLORS ===== */
+.status-select.applied,
+.status-select option[value="applied"] {
+  color: #ffcc00;
+}
+
+.status-select.interviewing,
+.status-select option[value="interviewing"] {
+  color: #00ffff;
+}
+
+.status-select.offer,
+.status-select option[value="offer"] {
+  color: #00ff88;
+}
+
+.status-select.rejected,
+.status-select option[value="rejected"] {
+  color: #ff4444;
+}
+
+/* ===== DELETE BUTTON (TERMINAL STYLE) ===== */
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #ff4444;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-btn:hover {
+  color: #ff0000;
+}
+
+/* ===== EXPANDED DESCRIPTION ===== */
+.description-row td {
+  color: #66ff66;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  padding: 15px;
+}
+
+/* ===== CRT SCANLINES ===== */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+}
